@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Francink · Tatuaggi realistici, microrealistici e fine line</title>
+  <meta name="description" content="Francink: tatuaggi realistici, microrealistici e fine line. Guarda i lavori e prenota su Instagram.">
+  <meta name="theme-color" content="#F4E8DA">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="assets/img/hero-h-cut-v4.webp" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="assets/img/hero-v-cut-v4.webp" media="(max-width: 767px)">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#lavori">Vai ai lavori</a>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="Francink, torna su">francink</a>
+    <nav class="nav__links" aria-label="Sezioni">
+      <a href="#lavori">Lavori</a>
+      <a href="#chi">Chi sono</a>
+      <a href="#prenota">Come prenotare</a>
+    </nav>
+    <a class="btn btn--line" href="https://www.instagram.com/francink_/" target="_blank" rel="noopener">Prenota</a>
+  </header>
+
+  <main id="top">
+    <!-- HERO: sfondo panna, titolo dietro, ragazza scontornata davanti -->
+    <section class="hero" aria-label="Francink">
+      <h1 class="hero__title" data-parallax="0.25">
+        <span class="hero__word">Francink</span>
+        <span class="visually-hidden">, tatuaggi realistici, microrealistici e fine line</span>
+      </h1>
+
+      <!-- la foto sta in un riquadro 3:2 ancorato in basso a destra -->
+      <div class="hero__stage">
+      <picture class="hero__subject">
+        <source media="(min-width: 768px)" srcset="assets/img/hero-h-cut-v4.webp" width="2304" height="1536">
+        <img src="assets/img/hero-v-cut-v4.webp" width="1536" height="2304" alt="Francink al lavoro: tatua un avambraccio con la macchinetta rosa" fetchpriority="high">
+      </picture>
+      </div>
+
+      <!-- contorno del titolo davanti alla ragazza, per leggere le lettere coperte -->
+      <div class="hero__ghost" aria-hidden="true">
+        <div class="hero__ghost-in" data-parallax="0.25"><span class="hero__word">Francink</span></div>
+      </div>
+
+      <div class="hero__copy">
+        <p class="hero__lead">Realistico, <em>microrealistico</em>, fine line.</p>
+        <p class="hero__sub">Disegno ogni tatuaggio su di te, dall'idea alla pelle.</p>
+        <div class="hero__actions">
+          <a class="btn btn--pink" href="https://www.instagram.com/francink_/" target="_blank" rel="noopener">
+            Prenota su Instagram
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#lavori">Guarda i lavori</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAVORI: sezione scura, divisa per stile -->
+    <section class="works" id="lavori" aria-labelledby="lavori-title">
+      <div class="works__head">
+        <h2 id="lavori-title" class="display">Lavori</h2>
+        <p class="works__intro">Tre stili, <em>una mano</em>. Scegli quello che fa per te.</p>
+        <div class="tabs" role="tablist" aria-label="Filtra per stile">
+          <button role="tab" aria-selected="true" data-filter="tutti">Tutti</button>
+          <button role="tab" aria-selected="false" data-filter="realistico">Realistico</button>
+          <button role="tab" aria-selected="false" data-filter="micro">Microrealistico</button>
+          <button role="tab" aria-selected="false" data-filter="fineline">Fine line</button>
+        </div>
+      </div>
+
+      <!-- SEGNAPOSTO: sostituire ogni .tile__ph con <img src="assets/img/lavori/..." alt="..."> -->
+      <ul class="grid">
+        <li class="tile tile--arch" data-style="realistico"><div class="tile__ph"></div><span class="tile__label">Realistico</span></li>
+        <li class="tile" data-style="fineline"><div class="tile__ph"></div><span class="tile__label">Fine line</span></li>
+        <li class="tile tile--tall" data-style="micro"><div class="tile__ph"></div><span class="tile__label">Microrealistico</span></li>
+        <li class="tile" data-style="micro"><div class="tile__ph"></div><span class="tile__label">Microrealistico</span></li>
+        <li class="tile tile--arch" data-style="fineline"><div class="tile__ph"></div><span class="tile__label">Fine line</span></li>
+        <li class="tile" data-style="realistico"><div class="tile__ph"></div><span class="tile__label">Realistico</span></li>
+        <li class="tile" data-style="fineline"><div class="tile__ph"></div><span class="tile__label">Fine line</span></li>
+        <li class="tile tile--tall" data-style="realistico"><div class="tile__ph"></div><span class="tile__label">Realistico</span></li>
+        <li class="tile tile--arch" data-style="micro"><div class="tile__ph"></div><span class="tile__label">Microrealistico</span></li>
+      </ul>
+
+      <a class="works__more" href="https://www.instagram.com/francink_/" target="_blank" rel="noopener">Tutti i lavori su Instagram <span aria-hidden="true">→</span></a>
+    </section>
+
+    <!-- CHI SONO -->
+    <section class="about" id="chi" aria-labelledby="chi-title">
+      <h2 id="chi-title" class="display">Chi<br>sono</h2>
+      <div class="about__text">
+        <p class="about__big">Sono Francesca e tatuo <em>piccoli dettagli</em> che si guardano da vicino.</p>
+        <p>Lavoro su tre stili: il realistico, il microrealistico e il fine line. Ogni disegno nasce da quello che mi racconti e lo costruisco sulla tua pelle, sulla zona e sulla misura giuste.</p>
+      </div>
+    </section>
+
+    <!-- COME PRENOTARE -->
+    <section class="book" id="prenota" aria-labelledby="prenota-title">
+      <h2 id="prenota-title" class="display">Come<br>prenotare</h2>
+      <ol class="steps">
+        <li>
+          <span class="steps__n">01</span>
+          <h3>Scrivimi su Instagram</h3>
+          <p>Mandami un messaggio a <strong>@francink_</strong> con la tua idea e qualche foto di riferimento.</p>
+        </li>
+        <li>
+          <span class="steps__n">02</span>
+          <h3>Dimmi zona e misura</h3>
+          <p>Dove lo vuoi e quanto grande. Così ti dico se lo stile funziona e quanto tempo serve.</p>
+        </li>
+        <li>
+          <span class="steps__n">03</span>
+          <h3>Fissiamo la data</h3>
+          <p>Ti propongo un giorno libero e preparo il disegno prima dell'appuntamento.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 id="cta-title" class="display">Hai<br>un'idea?</h2>
+      <p>Scrivimi. Ne parliamo e la disegniamo insieme.</p>
+      <a class="btn btn--dark btn--big" href="https://www.instagram.com/francink_/" target="_blank" rel="noopener">
+        Prenota su Instagram
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8"/></svg>
+      </a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="foot__logo">francink</span>
+    <a href="https://www.instagram.com/francink_/" target="_blank" rel="noopener">Instagram</a>
+    <span>© 2026</span>
+  </footer>
+
+  <a class="fab is-hidden" href="https://www.instagram.com/francink_/" target="_blank" rel="noopener">Prenota su Instagram</a>
+
+  <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
