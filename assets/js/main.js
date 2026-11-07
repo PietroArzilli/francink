@@ -4,11 +4,12 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
 window.lenis = new Lenis({ autoRaf: true, autoToggle: true, anchors: true, allowNestedScroll: true, stopInertiaOnNavigate: true })
 
 const nav = document.querySelector('.nav')
-const parallax = [...document.querySelectorAll('[data-parallax]')]
+// parallasse via JS solo dove manca quella in CSS e non si usa il touch (lì scatterebbe)
+const jsParallax = !reduce && !CSS.supports('animation-timeline: scroll()') && matchMedia('(pointer: fine)').matches
+const parallax = jsParallax ? [...document.querySelectorAll('[data-parallax]')] : []
 
 function onScroll(y) {
   nav.classList.toggle('is-solid', y > 40)
-  if (reduce) return
   for (const el of parallax) el.style.transform = `translate3d(0, ${y * el.dataset.parallax}px, 0)`
 }
 

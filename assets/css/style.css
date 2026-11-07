@@ -111,7 +111,6 @@ h1, h2, h3, p { margin: 0; }
   top: max(84px, calc(100% - var(--S) / 1.5 + var(--S) * .08));
   text-align: center;
   pointer-events: none;
-  will-change: transform;
 }
 .hero__word {
   display: block;
@@ -151,6 +150,20 @@ h1, h2, h3, p { margin: 0; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 .hero .btn--ghost { background: var(--cream); }
 @media (min-width: 768px) and (max-width: 1100px) { .hero__lead { max-width: 15ch; } }
+
+/* ---------- Parallasse del titolo ----------
+   Legata allo scroll in CSS: il browser la muove insieme alla pagina, senza scatti su iPhone.
+   Dove non è supportata ci pensa main.js, ma solo con mouse/trackpad. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__title, .hero__ghost-in {
+      animation: drift linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100vh;
+    }
+  }
+}
+@keyframes drift { to { transform: translate3d(0, 25vh, 0); } }
 
 /* ---------- Ingresso al caricamento ---------- */
 @media (prefers-reduced-motion: no-preference) {
