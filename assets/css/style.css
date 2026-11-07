@@ -152,10 +152,10 @@ h1, h2, h3, p { margin: 0; }
 @media (min-width: 768px) and (max-width: 1100px) { .hero__lead { max-width: 15ch; } }
 
 /* ---------- Parallasse del titolo ----------
-   Legata allo scroll in CSS: il browser la muove insieme alla pagina, senza scatti su iPhone.
-   Dove non è supportata ci pensa main.js, ma solo con mouse/trackpad. */
+   Solo con mouse/trackpad: sugli schermi touch (iPhone) il titolo scorre con la pagina,
+   perché lì la parallasse scatta. Legata allo scroll in CSS; dove manca ci pensa main.js. */
 @supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) and (pointer: fine) {
     .hero__title, .hero__ghost-in {
       animation: drift linear both;
       animation-timeline: scroll(root);
