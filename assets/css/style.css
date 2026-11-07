@@ -290,7 +290,8 @@ h1, h2, h3, p { margin: 0; }
 
   .hero { min-height: 640px; max-height: none; }
   .hero__stage { inset: 0; width: auto; aspect-ratio: auto; }
-  .hero__title, .hero__ghost-in { top: 150px; }
+  /* la testa parte a circa 1/4 dell'altezza: i capelli coprono ~45px delle lettere su ogni telefono */
+  .hero__title, .hero__ghost-in { top: calc(25.2% - 20.9vw + 45px); }
   .hero__word { font-size: 25.5vw; }
   .hero__subject img { object-fit: cover; object-position: center bottom; }
   .hero__copy { top: 96px; bottom: auto; right: var(--gutter); max-width: none; }
