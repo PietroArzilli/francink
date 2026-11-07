@@ -269,14 +269,11 @@ h1, h2, h3, p { margin: 0; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--pink-dark); }
 
-/* pulsante fisso, solo su telefono */
-.fab { display: none; }
-
 /* ---------- Telefono ---------- */
 @media (max-width: 767px) {
   body { font-size: 16px; }
   .nav__links { display: none; }
-  .nav .btn--line { display: none; }
+  .nav .btn--line { min-height: 38px; padding: 0 16px; background: var(--pink); border-color: var(--pink); color: #fff; }
 
   .hero { min-height: 640px; max-height: none; }
   .hero__stage { inset: 0; width: auto; aspect-ratio: auto; }
@@ -297,17 +294,6 @@ h1, h2, h3, p { margin: 0; }
   .about { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; gap: 28px; margin-top: 40px; }
 
-  .fab {
-    display: flex; align-items: center; justify-content: center;
-    position: fixed; z-index: 60;
-    left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom));
-    min-height: 54px; border-radius: var(--radius);
-    background: var(--pink); color: #fff; text-decoration: none;
-    font: 600 16px/1 var(--sans);
-    box-shadow: 0 10px 30px rgba(42, 40, 38, .25);
-    transition: transform .3s, opacity .3s;
-  }
-  .fab.is-hidden { transform: translateY(140%); opacity: 0; }
   .foot { flex-wrap: wrap; }
 }
 
