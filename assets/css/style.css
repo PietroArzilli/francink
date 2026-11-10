@@ -139,7 +139,7 @@ h1, h2, h3, p { margin: 0; }
   margin-top: .5em;
   padding-left: calc(var(--fs) * .0228);  /* parte dal bordo vero della F */
   font: italic 400 clamp(20px, 2.1vw, 34px)/1 var(--serif);
-  color: var(--ink);
+  color: var(--pink-dark);
 }
 .hero__ghost .hero__surname { visibility: hidden; }
 .hero__ghost .hero__word {
