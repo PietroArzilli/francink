@@ -117,7 +117,10 @@ h1, h2, h3, p { margin: 0; }
   font-family: var(--display);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: calc((50vw - var(--S) * var(--head)) / var(--k));
+  font-size: var(--fs);
+  /* la F di Anton ha un margine interno a sinistra che la A non ha: sposto la parola per centrare l'inchiostro */
+  position: relative;
+  left: calc(var(--fs) * -.0167);
   line-height: .82;
   letter-spacing: -.01em;
   color: var(--ink);
@@ -127,10 +130,14 @@ h1, h2, h3, p { margin: 0; }
   position: absolute; inset: 0; z-index: 3; pointer-events: none;
 }
 /* nome + cognome: il blocco è centrato, il cognome si allinea a sinistra sotto la F */
-.hero__name { display: inline-block; text-align: left; }
+.hero__name {
+  --fs: calc((50vw - var(--S) * var(--head)) / var(--k));
+  display: inline-block; text-align: left;
+}
 .hero__surname {
   display: block;
   margin-top: .5em;
+  padding-left: calc(var(--fs) * .0228);  /* parte dal bordo vero della F */
   font: italic 400 clamp(20px, 2.1vw, 34px)/1 var(--serif);
   color: var(--ink);
 }
@@ -301,7 +308,7 @@ h1, h2, h3, p { margin: 0; }
   .hero__stage { inset: 0; width: auto; aspect-ratio: auto; }
   /* la testa parte a circa 1/4 dell'altezza: i capelli coprono ~45px delle lettere su ogni telefono */
   .hero__title, .hero__ghost-in { top: calc(25.2% - 17.7vw + 45px); }
-  .hero__word { font-size: 21.6vw; }
+  .hero__name { --fs: 21.6vw; }
   /* su telefono i capelli coprono il cognome: lo mostro dallo strato davanti alla ragazza */
   .hero__title .hero__surname { visibility: hidden; }
   .hero__ghost .hero__surname {
