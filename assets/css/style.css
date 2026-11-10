@@ -138,10 +138,10 @@ h1, h2, h3, p { margin: 0; }
   display: block;
   margin-top: .5em;
   padding-left: calc(var(--fs) * .0228);  /* parte dal bordo vero della F */
-  font: 400 clamp(18px, 1.9vw, 30px)/1 var(--display);
+  font: 400 clamp(26px, 3vw, 48px)/1 var(--display);
   text-transform: uppercase;
   letter-spacing: .04em;
-  color: var(--pink-dark);
+  color: var(--ink);
 }
 .hero__ghost .hero__surname { visibility: hidden; }
 .hero__ghost .hero__word {
